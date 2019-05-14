@@ -14,9 +14,7 @@ export class UserTableComponent implements OnInit {
 
   users: User[] = [];
 
-  constructor(private userService: UserService,
-              private postService: PostService,
-              private apiService: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.index('users').subscribe(users => {
@@ -32,9 +30,9 @@ export class UserTableComponent implements OnInit {
 
         this.apiService.show('albums', `?userId=${user.id}`).subscribe(albums => {
           user.albums = albums;
+
           user.albums.map(album => {
             album.photos = [];
-
             this.apiService.show('photos', `?albumId=${album.id}`).subscribe(photos => {
               album.photos = photos;
             });
@@ -46,5 +44,15 @@ export class UserTableComponent implements OnInit {
         return user;
       });
     });
+  }
+
+  calcPhoto(user) {
+    let cont = 0;
+
+    if (user.albums) {
+      user.albums.forEach(album => cont += album.photos.length);
+    }
+
+    return cont;
   }
 }
