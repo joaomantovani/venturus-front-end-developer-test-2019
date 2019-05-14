@@ -1,0 +1,20 @@
+<div [ngSwitch]="weekType">
+  <span *ngSwitchCase="'everyday'">
+    Every Day
+  </span>
+
+  <span *ngSwitchCase="'weekdays'">
+      Week days
+  </span>
+
+  <span *ngSwitchCase="'weekend'">
+    Weekends
+  </span>
+
+  <span *ngSwitchCase="'nothing'">
+    <span *ngFor="let day of daysOfWeek.days; last as isLast">
+      {{day}}{{isLast ? '' : ', '}}
+    </span>
+  </span>
+
+</div>
