@@ -4,6 +4,9 @@ import {UserService} from '../../shared/services/user/user.service';
 import {PostService} from '../../shared/services/post/post.service';
 import {Post} from '../../shared/models/post.model';
 import {ApiService} from '../../shared/services/api/api.service';
+import {MockService} from '../../shared/services/mock/mock.service';
+import {RideGroup} from '../../shared/models/rideGroup.model';
+import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
 
 @Component({
   selector: 'app-user-table',
@@ -14,7 +17,8 @@ export class UserTableComponent implements OnInit {
 
   users: User[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+              private mockService: MockService) { }
 
   ngOnInit() {
     this.apiService.index('users').subscribe(users => {
@@ -23,16 +27,26 @@ export class UserTableComponent implements OnInit {
       this.users.map(user => {
         user.posts = [];
         user.albums = [];
+        user.rideInGroup = new RideGroup();
+        user.daysOfWeek = new DaysOfWeek();
 
+        // Load user posts
         this.apiService.show('posts', `?userId=${user.id}`).subscribe(posts => {
           user.posts = posts;
         });
 
+        this.mockService.show('ride', `?userId=${user.id}`).subscribe(value => user.rideInGroup = value[0]);
+
+        // Load user albums
         this.apiService.show('albums', `?userId=${user.id}`).subscribe(albums => {
           user.albums = albums;
 
+          // Go through every album
           user.albums.map(album => {
+            // Initialize album
             album.photos = [];
+
+            // Load all photos from album
             this.apiService.show('photos', `?albumId=${album.id}`).subscribe(photos => {
               album.photos = photos;
             });

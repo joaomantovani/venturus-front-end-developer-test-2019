@@ -20,8 +20,10 @@
       <td>{{user?.name}}</td>
       <td>{{user?.email}}</td>
       <td>{{user?.address.city}}</td>
-      <td></td>
-      <td></td>
+      <td>{{user?.rideInGroup?.title}}</td>
+      <td>
+        <app-field-days *ngIf="user" [user]="user"></app-field-days>
+      </td>
       <td>{{user?.posts.length}}</td>
       <td>{{user?.albums.length}}</td>
       <td>{{calcPhoto(user)}}</td>

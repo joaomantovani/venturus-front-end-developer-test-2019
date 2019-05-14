@@ -4,7 +4,8 @@ export const environment = {
   USER_API: 'https://jsonplaceholder.typicode.com/users',
   POSTS_API: 'https://jsonplaceholder.typicode.com/posts',
   PHOTOS_API: 'https://jsonplaceholder.typicode.com/photos',
-  ALBUMS_API: 'https://jsonplaceholder.typicode.com/albums'
+  ALBUMS_API: 'https://jsonplaceholder.typicode.com/albums',
+  LOCALHOST: 'http://localhost:3000/'
 };
 
 // This file can be replaced during build by using the `fileReplacements` array.

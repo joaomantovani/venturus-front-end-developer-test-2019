@@ -10,12 +10,14 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
+import { FieldDaysComponent } from './user-table/field-days/field-days.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    UserTableComponent
+    UserTableComponent,
+    FieldDaysComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import {Post} from './post.model';
 import {Albums} from './album.model';
+import {DaysOfWeek} from './daysOfWeek.model';
+import {RideGroup} from './rideGroup.model';
 
 export class User {
   id: number;
@@ -25,4 +27,6 @@ export class User {
   };
   posts: Post[];
   albums: Albums[];
+  daysOfWeek: DaysOfWeek;
+  rideInGroup: RideGroup;
 }
