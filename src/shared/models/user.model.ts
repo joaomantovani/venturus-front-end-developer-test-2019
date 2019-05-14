@@ -1,3 +1,6 @@
+import {Post} from './post.model';
+import {Albums} from './album.model';
+
 export class User {
   id: number;
   name: string;
@@ -20,4 +23,6 @@ export class User {
     catchPhrase: string;
     bs: string
   };
+  posts: Post[];
+  albums: Albums[];
 }
