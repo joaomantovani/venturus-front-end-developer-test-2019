@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import { FieldDaysComponent } from './user-table/field-days/field-days.component';
+import {ConfirmationService, ConfirmDialogModule, MessageService} from 'primeng/primeng';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,15 @@ import { FieldDaysComponent } from './user-table/field-days/field-days.component
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    ConfirmDialogModule,
+    ToastModule,
   ],
   providers: [
-    HttpClientModule
+    HttpClientModule,
+    ConfirmDialogModule,
+    ConfirmationService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

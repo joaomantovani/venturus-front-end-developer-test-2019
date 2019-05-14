@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../shared/models/user.model';
-import {UserService} from '../../shared/services/user/user.service';
-import {PostService} from '../../shared/services/post/post.service';
-import {Post} from '../../shared/models/post.model';
 import {ApiService} from '../../shared/services/api/api.service';
 import {MockService} from '../../shared/services/mock/mock.service';
 import {RideGroup} from '../../shared/models/rideGroup.model';
 import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {ConfirmationService, MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-user-table',
@@ -16,9 +15,12 @@ import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
 export class UserTableComponent implements OnInit {
 
   users: User[] = [];
+  faTrash = faTrash;
 
   constructor(private apiService: ApiService,
-              private mockService: MockService) { }
+              private mockService: MockService,
+              private confirmationService: ConfirmationService,
+              private messageService: MessageService) { }
 
   ngOnInit() {
     this.apiService.index('users').subscribe(users => {
@@ -68,5 +70,18 @@ export class UserTableComponent implements OnInit {
     }
 
     return cont;
+  }
+
+  delete(user: User) {
+    this.confirmationService.confirm({
+      message: 'Do you want to delete this record?',
+      header: 'Delete Confirmation',
+      icon: 'pi pi-info-circle',
+      accept: () => {
+        // Remove user from users array
+        this.users.splice(this.users.indexOf(user), 1)
+        this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
+      },
+    });
   }
 }
