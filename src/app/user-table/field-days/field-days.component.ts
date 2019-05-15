@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {DaysOfWeek} from '../../../shared/models/daysOfWeek.model';
 import {User} from '../../../shared/models/user.model';
 import {MockService} from '../../../shared/services/mock/mock.service';
@@ -8,7 +8,7 @@ import {MockService} from '../../../shared/services/mock/mock.service';
   templateUrl: './field-days.component.html',
   styleUrls: ['./field-days.component.sass']
 })
-export class FieldDaysComponent implements OnInit {
+export class FieldDaysComponent implements OnInit, AfterContentChecked {
 
   @Input() user: User;
   daysOfWeek: DaysOfWeek;
@@ -19,16 +19,15 @@ export class FieldDaysComponent implements OnInit {
   private everyday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   private weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
-  constructor(private mockService: MockService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.mockService.show('days', `?userId=${this.user.id}`).subscribe(value => {
-      this.daysOfWeek = value[0];
-      this.formatDate();
-    });
+    this.weekType = null;
+    this.daysOfWeek = this.user.daysOfWeek;
   }
 
   private formatDate() {
+
     if (this.everyday.every(labelDay => this.daysOfWeek.days.includes(labelDay))) {
       this.weekType = 'everyday';
     } else if (this.weekdays.every(labelDay => this.daysOfWeek.days.includes(labelDay))) {
@@ -37,6 +36,13 @@ export class FieldDaysComponent implements OnInit {
       this.weekType = 'weekend';
     } else {
       this.weekType = 'nothing';
+    }
+  }
+
+  ngAfterContentChecked(): void {
+    if (this.daysOfWeek !== this.user.daysOfWeek) {
+      this.daysOfWeek = this.user.daysOfWeek;
+      this.formatDate();
     }
   }
 }

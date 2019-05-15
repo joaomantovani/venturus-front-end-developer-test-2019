@@ -1,4 +1,4 @@
-<div [ngSwitch]="weekType">
+<div [hidden]="!weekType" [ngSwitch]="weekType">
   <span *ngSwitchCase="'everyday'">
     Every Day
   </span>
