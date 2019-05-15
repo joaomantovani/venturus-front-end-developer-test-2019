@@ -1,12 +1,12 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {User} from '../../shared/models/user.model';
-import {ApiService} from '../../shared/services/api/api.service';
-import {MockService} from '../../shared/services/mock/mock.service';
-import {RideGroup} from '../../shared/models/rideGroup.model';
-import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
+import {User} from '../../../../../shared/models/user.model';
+import {ApiService} from '../../../../../shared/services/api/api.service';
+import {MockService} from '../../../../../shared/services/mock/mock.service';
+import {RideGroup} from '../../../../../shared/models/rideGroup.model';
+import {DaysOfWeek} from '../../../../../shared/models/daysOfWeek.model';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {Albums} from '../../shared/models/album.model';
+import {Albums} from '../../../../../shared/models/album.model';
 
 @Component({
   selector: 'app-user-table',
@@ -26,8 +26,11 @@ export class UserTableComponent implements OnInit, OnChanges {
               private messageService: MessageService) { }
 
   ngOnInit() {
+    this.users = [];
+
     this.apiService.index('users').subscribe(users => {
-      this.users = users;
+      this.users.push(...users);
+      this.mockService.index('users-from-db').subscribe(usersFromDb => this.users.push(...usersFromDb));
 
       this.users.map(user => {
         user.posts = [];
@@ -56,12 +59,8 @@ export class UserTableComponent implements OnInit, OnChanges {
             this.apiService.show('photos', `?albumId=${album.id}`).subscribe(photos => {
               album.photos = photos;
             });
-
-            return album;
           });
         });
-
-        return user;
       });
     });
   }
@@ -71,7 +70,7 @@ export class UserTableComponent implements OnInit, OnChanges {
 
     if (user.albums.length !== undefined) {
       user.albums.forEach(album => {
-        return album.photos ? cont += album.photos.length : 0;
+        return album.photos ? cont += (album.photos.length - 1) : 0;
       });
     }
 
@@ -85,15 +84,16 @@ export class UserTableComponent implements OnInit, OnChanges {
       icon: 'pi pi-info-circle',
       accept: () => {
         // Remove user from users array
-        this.users.splice(this.users.indexOf(user), 1);
-        this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
+        this.mockService.delete('users-from-db', user.id).subscribe(value => {
+          this.users.splice(this.users.indexOf(user), 1);
+          this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
+        });
       },
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!changes.newUser.isFirstChange()) {
-      console.log(changes.newUser);
       const formValues = changes.newUser.currentValue;
 
       this.users.push(formValues);

@@ -8,11 +8,4 @@ import {User} from '../shared/models/user.model';
 })
 export class AppComponent {
   title = 'venturus-test';
-
-  newUser: User;
-
-  receiverNewUser(newUser) {
-    console.log(newUser);
-    this.newUser = newUser;
-  }
 }
