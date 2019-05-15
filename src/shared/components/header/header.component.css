@@ -1,3 +1,21 @@
+.navbar-brand {
+  color: #333333;
+  font-weight: 900; }
 
+.navbar-brand img {
+  margin-right: 0.35em;
+  width: 2em;
+  height: auto; }
+
+.navbar {
+  padding: 1.2em 0; }
+
+.usr-img {
+  width: 2em;
+  margin-right: 0.35em; }
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #19a786;
+  background-color: #F9F9F9; }
 
 /*# sourceMappingURL=header.component.css.map */

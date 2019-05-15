@@ -1,6 +1,6 @@
-<nav (keyup.escape)="closeDropdown()" class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav (keyup.escape)="closeDropdown()" class="navbar navbar-expand-sm ">
   <a class="navbar-brand" href="#">
-    <img alt="logo" src="https://www.placehold.it/50x50">
+    <img alt="logo" src="assets/logos/logo.png">
     Venturus Sports
   </a>
   <button aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
@@ -12,7 +12,7 @@
     <ul class="navbar-nav">
       <li [class.show]="showDropdown" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle">
-          <img src="https://www.placehold.it/50x50">
+          <img class="rounded-circle usr-img" src="https://www.placehold.it/50x50">
           {{loggedUser?.name}}
         </a>
         <div [class.show]="showDropdown" aria-labelledby="dropdown03" class="dropdown-menu">
@@ -27,6 +27,3 @@
     </ul>
   </div>
 </nav>
-
-<button class="btr btn-success" (click)="switchDropdown()">change</button>
-{{showDropdown}}
