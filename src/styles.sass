@@ -3,3 +3,14 @@
 @import "~primeng/resources/primeng.min.css"
 @import "~primeng/resources/themes/bootstrap/theme.css"
 
+@import "variables"
+
+body
+  font-family: 'Roboto', sans-serif
+  color: $primary-text-color
+
+//Global replacement
+.btn-success, .btn-info
+  background-color: $secondary-color
+.btn-success:hover, .btn-info:hover
+  background-color: $secondary-darker-color

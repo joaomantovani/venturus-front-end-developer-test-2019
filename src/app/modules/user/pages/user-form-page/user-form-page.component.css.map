@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,gBAAgB;EACd,gBAAgB,ECKK,OAAO;EDJ5B,OAAO,EAAE,KAAK;;AAEhB,EAAE;EACA,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,MAAM;;AAEnB,OAAO;EACL,KAAK,ECVW,OAAO;;ADYzB,QAAQ;EACN,OAAO,EAAE,GAAG;EACZ,OAAO,EAAE,WAAW;;AAEtB,UAAU;EACR,aAAa,EAAE,CAAC;;AAElB,UAAU;EACR,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,MAAM;;AAEpB,YAAY;EACV,SAAS,EAAE,MAAM;EACjB,KAAK,EAAE,IAAI;;AAEb,KAAK;EACH,KAAK,ECxBgB,OAAO",
+"sources": ["user-form-page.component.sass","../../../../../variables.sass"],
 "names": [],
 "file": "user-form-page.component.css"
 }
