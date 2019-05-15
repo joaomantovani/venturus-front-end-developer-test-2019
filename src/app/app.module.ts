@@ -20,7 +20,6 @@ import {
   RadioButtonModule
 } from 'primeng/primeng';
 import {ToastModule} from 'primeng/toast';
-import { UserFormComponent } from './user-table/user-form/user-form.component';
 import { InputComponent } from '../shared/components/form/input/input.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { InputComponent } from '../shared/components/form/input/input.component'
     UserComponent,
     UserTableComponent,
     FieldDaysComponent,
-    UserFormComponent,
     InputComponent
   ],
   imports: [
