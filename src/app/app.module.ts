@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import {
+  BreadcrumbModule,
   CheckboxModule,
   ConfirmationService,
   ConfirmDialogModule,
@@ -19,12 +20,14 @@ import {
 } from 'primeng/primeng';
 import {ToastModule} from 'primeng/toast';
 import { InputComponent } from '../shared/components/form/input/input.component';
+import { BreadcrumbComponent } from '../shared/components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    InputComponent
+    InputComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { InputComponent } from '../shared/components/form/input/input.component'
     CheckboxModule,
     InputTextModule,
     RadioButtonModule,
+    BreadcrumbModule,
   ],
   providers: [
     HttpClientModule,
