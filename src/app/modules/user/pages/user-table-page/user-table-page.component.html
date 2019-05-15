@@ -1,1 +1,18 @@
+<div class="container-fluid full-background">
+  <div class="row">
+    <div class="col-xs-6 col-lg-3 col-md-3 col-sm-4" *ngFor="let icon of icons">
+
+      <div class="iconbox">
+        <div class="icon-wrap">
+          <fa-icon size="3x" [icon]="icon.icon"></fa-icon>
+        </div>
+        <div class="text-wrap">
+          <small>{{icon.small}}</small>
+          <h5>{{icon.h5}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-user-table [newUser]="newUser"></app-user-table>

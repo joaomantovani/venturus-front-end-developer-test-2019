@@ -1,3 +1,30 @@
+.full-background {
+  background-color: #BAEBE1;
+  padding: 1.2em; }
 
+h5 {
+  font-weight: 900;
+  font-size: 1.6rem; }
+
+fa-icon {
+  color: #1ABC9C; }
+
+.iconbox {
+  padding: 1em;
+  display: inline-flex; }
+
+.iconbox p {
+  margin-bottom: 0; }
+
+.icon-wrap {
+  margin-right: 15px;
+  text-align: center; }
+
+.icon-wrap i {
+  font-size: 2.5rem;
+  width: auto; }
+
+small {
+  color: #525b5a; }
 
 /*# sourceMappingURL=user-table-page.component.css.map */
