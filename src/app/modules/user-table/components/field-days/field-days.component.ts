@@ -1,7 +1,7 @@
 import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {DaysOfWeek} from '../../../shared/models/daysOfWeek.model';
-import {User} from '../../../shared/models/user.model';
-import {MockService} from '../../../shared/services/mock/mock.service';
+import {DaysOfWeek} from '../../../../../shared/models/daysOfWeek.model';
+import {User} from '../../../../../shared/models/user.model';
+import {MockService} from '../../../../../shared/services/mock/mock.service';
 
 @Component({
   selector: 'app-field-days',

@@ -1,12 +1,12 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {User} from '../../shared/models/user.model';
-import {ApiService} from '../../shared/services/api/api.service';
-import {MockService} from '../../shared/services/mock/mock.service';
-import {RideGroup} from '../../shared/models/rideGroup.model';
-import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
+import {User} from '../../../../../shared/models/user.model';
+import {ApiService} from '../../../../../shared/services/api/api.service';
+import {MockService} from '../../../../../shared/services/mock/mock.service';
+import {RideGroup} from '../../../../../shared/models/rideGroup.model';
+import {DaysOfWeek} from '../../../../../shared/models/daysOfWeek.model';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {Albums} from '../../shared/models/album.model';
+import {Albums} from '../../../../../shared/models/album.model';
 
 @Component({
   selector: 'app-user-table',
