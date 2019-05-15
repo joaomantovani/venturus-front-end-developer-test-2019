@@ -1,3 +1,36 @@
+.registration-banner {
+  padding: 1.2em; }
 
+h5 {
+  font-size: 1.3rem;
+  color: #3AC5A9;
+  font-weight: 100;
+  margin-bottom: 1em; }
+
+fa-icon {
+  color: #19a786; }
+
+.iconbox {
+  padding: 1em;
+  display: inline-grid; }
+
+.text-wrap {
+  display: inline-flex; }
+
+.iconbox p {
+  margin-bottom: 0; }
+
+.icon-wrap {
+  margin-right: 15px;
+  text-align: center; }
+
+.icon-wrap i {
+  font-size: 2.5rem;
+  width: auto; }
+
+p {
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.2em; }
 
 /*# sourceMappingURL=user-form-page.component.css.map */

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../../../../shared/models/user.model';
 import {BreadcrumbService} from '../../../../../shared/components/breadcrumb/breadcrumb.service';
-import {faPuzzlePiece, faTrophy, faSign, faTrash} from '@fortawesome/free-solid-svg-icons/';
-import {library} from '@fortawesome/fontawesome-svg-core';
-
-library.add(faPuzzlePiece, faTrophy, faSign);
+import {faHeartbeat} from '@fortawesome/free-solid-svg-icons/';
+import {faLifeRing, faSmile} from '@fortawesome/free-regular-svg-icons/';
 
 @Component({
   selector: 'app-user-form-page',
@@ -14,16 +12,19 @@ library.add(faPuzzlePiece, faTrophy, faSign);
 export class UserFormPageComponent implements OnInit {
 
   newUser: User;
-  faPuzzlePiece = faPuzzlePiece;
-  faTrophy = faTrophy;
-  faSign = faSign;
 
   constructor(private breadcrumb: BreadcrumbService) { }
 
   icons: any[] = [
-    {icon: faPuzzlePiece, h5: 'Cycling', small: 'Sport Type'},
-    {icon: faTrophy, h5: 'Advanced', small: 'Mode'},
-    {icon: faSign, h5: '30 miles', small: 'Route'},
+    {icon: faLifeRing, title: 'Need help?',
+      paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta blandit ligula. Ut quis suscipit elit, nec cursus orci'
+    },
+    {icon: faHeartbeat, title: 'Why register?',
+      paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta blandit ligula. Ut quis suscipit elit, nec cursus orci'
+    },
+    {icon: faSmile, title: 'What people are saying...',
+      paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta blandit ligula. Ut quis suscipit elit, nec cursus orci'
+    },
   ];
 
   ngOnInit() {
