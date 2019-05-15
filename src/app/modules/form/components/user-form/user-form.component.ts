@@ -1,12 +1,12 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
-import {User} from '../../../shared/models/user.model';
-import {RideGroup} from '../../../shared/models/rideGroup.model';
-import {DaysOfWeek} from '../../../shared/models/daysOfWeek.model';
+import {User} from '../../../../../shared/models/user.model';
+import {RideGroup} from '../../../../../shared/models/rideGroup.model';
+import {DaysOfWeek} from '../../../../../shared/models/daysOfWeek.model';
 import {MessageService} from 'primeng/api';
-import {Post} from '../../../shared/models/post.model';
-import {Albums} from '../../../shared/models/album.model';
+import {Post} from '../../../../../shared/models/post.model';
+import {Albums} from '../../../../../shared/models/album.model';
 
 @Component({
   selector: 'app-user-form',
