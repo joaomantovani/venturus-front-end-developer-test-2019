@@ -145,5 +145,11 @@
       "title": "Always"
     }
   ],
-  "users-from-db": []
+  "users-from-db": [],
+  "logged-user": [
+    {
+      "id": "dQw4w9WgXcQ",
+      "name": "Jason Bourne II"
+    }
+  ]
 }
