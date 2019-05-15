@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {BreadcrumbService} from '../../../../../shared/components/breadcrumb/breadcrumb.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-table-page',
@@ -8,9 +10,21 @@ import {Component, Input, OnInit} from '@angular/core';
 export class UserTablePageComponent implements OnInit {
   @Input() newUser: any;
 
-  constructor() { }
+  constructor(private breadcrumb: BreadcrumbService,
+              private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Users');
+
+    setTimeout(() =>
+      this.breadcrumb.setCrumbs([{
+        label: 'Home',
+        routerLink: '/users'
+      }, {
+        label: 'Users',
+        routerLink: '/users'
+      }])
+    );
   }
 
 }

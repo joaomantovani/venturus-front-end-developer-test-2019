@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../../../../shared/models/user.model';
+import {BreadcrumbService} from '../../../../../shared/components/breadcrumb/breadcrumb.service';
 
 @Component({
   selector: 'app-user-form-page',
@@ -10,9 +11,21 @@ export class UserFormPageComponent implements OnInit {
 
   newUser: User;
 
-  constructor() { }
+  constructor(private breadcrumb: BreadcrumbService) { }
 
   ngOnInit() {
+    setTimeout(() =>
+      this.breadcrumb.setCrumbs([{
+        label: 'Home',
+        routerLink: '/users'
+      }, {
+        label: 'Users',
+        routerLink: '/users'
+      }, {
+        label: 'New',
+        routerLink: '/users/new'
+      }])
+    );
   }
 
   receiverNewUser(newUser) {
