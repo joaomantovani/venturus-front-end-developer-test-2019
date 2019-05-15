@@ -1,3 +1,20 @@
+/deep/ body .ui-widget-header {
+  background: #F9F9F9;
+  border: none; }
 
+/deep/ body .ui-breadcrumb ul li .ui-menuitem-link {
+  color: #3AC5A9; }
+
+/deep/ body .ui-breadcrumb ul li .ui-menuitem-link:hover {
+  color: #19a786;
+  text-decoration: underline; }
+
+/deep/ .ui-breadcrumb ul {
+  display: flex; }
+
+/deep/ body .ui-breadcrumb ul li:last-child .ui-menuitem-link,
+/deep/ body .ui-state-active, body .ui-state-highlight {
+  background-color: transparent;
+  color: #333333; }
 
 /*# sourceMappingURL=breadcrumb.component.css.map */

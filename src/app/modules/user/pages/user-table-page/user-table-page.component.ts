@@ -18,9 +18,6 @@ export class UserTablePageComponent implements OnInit {
 
     setTimeout(() =>
       this.breadcrumb.setCrumbs([{
-        label: 'Home',
-        routerLink: '/users'
-      }, {
         label: 'Users',
         routerLink: '/users'
       }])

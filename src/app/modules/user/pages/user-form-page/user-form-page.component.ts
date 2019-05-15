@@ -29,9 +29,6 @@ export class UserFormPageComponent implements OnInit {
   ngOnInit() {
     setTimeout(() =>
       this.breadcrumb.setCrumbs([{
-        label: 'Home',
-        routerLink: '/users'
-      }, {
         label: 'Users',
         routerLink: '/users'
       }, {
