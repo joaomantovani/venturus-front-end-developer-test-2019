@@ -21,13 +21,18 @@ import {
 import {ToastModule} from 'primeng/toast';
 import { InputComponent } from '../shared/components/form/input/input.component';
 import { BreadcrumbComponent } from '../shared/components/breadcrumb/breadcrumb.component';
+import { UserDropdownComponent } from '../shared/components/header/user-dropdown/user-dropdown.component';
+import {HeaderComponent} from '../shared/components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     InputComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    HeaderComponent,
+    UserDropdownComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
