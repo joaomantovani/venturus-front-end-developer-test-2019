@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {User} from '../../shared/models/user.model';
 import {ApiService} from '../../shared/services/api/api.service';
 import {MockService} from '../../shared/services/mock/mock.service';
@@ -6,16 +6,19 @@ import {RideGroup} from '../../shared/models/rideGroup.model';
 import {DaysOfWeek} from '../../shared/models/daysOfWeek.model';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {ConfirmationService, MessageService} from 'primeng/api';
+import {Albums} from '../../shared/models/album.model';
 
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.sass']
 })
-export class UserTableComponent implements OnInit {
+export class UserTableComponent implements OnInit, OnChanges {
 
   users: User[] = [];
   faTrash = faTrash;
+
+  @Input() newUser: User;
 
   constructor(private apiService: ApiService,
               private mockService: MockService,
@@ -38,6 +41,7 @@ export class UserTableComponent implements OnInit {
         });
 
         this.mockService.show('ride', `?userId=${user.id}`).subscribe(value => user.rideInGroup = value[0]);
+        this.mockService.show('days', `?userId=${user.id}`).subscribe(value => user.daysOfWeek = value[0]);
 
         // Load user albums
         this.apiService.show('albums', `?userId=${user.id}`).subscribe(albums => {
@@ -65,8 +69,10 @@ export class UserTableComponent implements OnInit {
   calcPhoto(user) {
     let cont = 0;
 
-    if (user.albums) {
-      user.albums.forEach(album => cont += album.photos.length);
+    if (user.albums.length !== undefined) {
+      user.albums.forEach(album => {
+        return album.photos ? cont += album.photos.length : 0;
+      });
     }
 
     return cont;
@@ -79,9 +85,18 @@ export class UserTableComponent implements OnInit {
       icon: 'pi pi-info-circle',
       accept: () => {
         // Remove user from users array
-        this.users.splice(this.users.indexOf(user), 1)
+        this.users.splice(this.users.indexOf(user), 1);
         this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
       },
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes.newUser.isFirstChange()) {
+      console.log(changes.newUser);
+      const formValues = changes.newUser.currentValue;
+
+      this.users.push(formValues);
+    }
   }
 }
