@@ -8,25 +8,52 @@ export class User {
   name: string;
   username: string;
   email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string
-    }
-  };
+  address: Address;
   phone: string;
   website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string
-  };
+  company: Company;
   posts: Post[];
   albums: Albums[];
   daysOfWeek: DaysOfWeek;
   rideInGroup: RideGroup;
+
+
+  constructor() {
+    this.id = null;
+    this.name = '';
+    this.username = '';
+    this.email = '';
+    this.address = new Address();
+    this.phone = '';
+    this.website = '';
+    this.company = new Company();
+    this.posts = [new Post()];
+    this.albums = [new Albums()];
+    this.daysOfWeek = new DaysOfWeek();
+    this.rideInGroup = new RideGroup();
+  }
+}
+
+export class Address {
+  city: string;
+  geo: Geo;
+  street: string;
+  suite: string;
+  zipcode: string;
+
+
+  constructor() {
+    this.geo = new Geo();
+  }
+}
+
+export class Geo {
+  lat: string;
+  lng: string;
+}
+
+export class Company {
+  bs: string;
+  catchPhrase: string;
+  name: string;
 }

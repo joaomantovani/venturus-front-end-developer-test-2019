@@ -1,0 +1,70 @@
+<form #form=ngForm>
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input [(ngModel)]="user.username" class="form-control" id="username" name="username" pInputText type="text">
+        <small class="form-text text-muted" id="usernameHelp">Message</small>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input [(ngModel)]="user.name" class="form-control" id="name" name="name" pInputText type="text">
+        <small class="form-text text-muted" id="nameHelp">Message</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input [(ngModel)]="user.email" class="form-control" id="email" name="email" pInputText type="text">
+        <small class="form-text text-muted" id="emailHelp">Message</small>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="email">City</label>
+        <input [(ngModel)]="user.address.city" class="form-control" id="city" name="city" pInputText type="text">
+        <small class="form-text text-muted" id="cityHelp">Message</small>
+      </div>
+
+      <div class="form-group">
+        <label for="city">Ride in group?</label>
+        <br>
+        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="ny" label="Always" name="rideGroup"
+                       value="Always"></p-radioButton>
+        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="sf" label="Sometimes" name="rideGroup"
+                       value="Sometimes"></p-radioButton>
+        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="la" label="Never" name="rideGroup"
+                       value="Never"></p-radioButton>
+      </div>
+
+      <div class="form-group">
+        <label for="city">Days of the week</label>
+        <br>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sun" label="Sun" name="daysOfWeek"
+                    value="Sun"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
+                    value="Mon"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
+                    value="Tue"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
+                    value="Wed"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
+                    value="Thu"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
+                    value="Fri"></p-checkbox>
+        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
+                    value="Sat"></p-checkbox>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-md-12">
+    <button (click)="checkForm(form)" class="btn btn-info">Save</button>
+    <button (click)="resetForm(form)" class="btn btn-default">Discard</button>
+  </div>
+</div>

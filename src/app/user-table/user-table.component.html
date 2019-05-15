@@ -27,8 +27,8 @@
         <td>
           <app-field-days *ngIf="user" [user]="user"></app-field-days>
         </td>
-        <td>{{user?.posts.length}}</td>
-        <td>{{user?.albums.length}}</td>
+        <td>{{user?.posts?.length ? user?.posts?.length : 0}}</td>
+        <td>{{user?.albums?.length ? user?.albums?.length : 0}}</td>
         <td>{{calcPhoto(user)}}</td>
         <td>
           <button (click)="delete(user)" *ngIf="hover" class="btn btn-link" type="button">
