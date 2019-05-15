@@ -16,7 +16,6 @@ export class UserFormPageComponent implements OnInit {
   }
 
   receiverNewUser(newUser) {
-    console.log(newUser);
     this.newUser = newUser;
   }
 }

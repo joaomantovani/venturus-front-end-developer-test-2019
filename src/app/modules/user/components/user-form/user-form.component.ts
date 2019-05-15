@@ -7,6 +7,8 @@ import {DaysOfWeek} from '../../../../../shared/models/daysOfWeek.model';
 import {MessageService} from 'primeng/api';
 import {Post} from '../../../../../shared/models/post.model';
 import {Albums} from '../../../../../shared/models/album.model';
+import {MockService} from '../../../../../shared/services/mock/mock.service';
+import {UserService} from '../../../../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -19,7 +21,8 @@ export class UserFormComponent implements OnInit {
   @Output() newUser = new EventEmitter();
 
   constructor(private router: Router,
-              private messageService: MessageService) { }
+              private messageService: MessageService,
+              private mockService: MockService) { }
 
   ngOnInit() {
     this.user = new User();
@@ -31,10 +34,20 @@ export class UserFormComponent implements OnInit {
 
   checkForm(form: NgForm) {
     const cadastro = {...form.value, ...this.user};
-    this.newUser.emit(cadastro);
-    this.user = new User();
-    form.reset();
-    this.messageService.add({severity: 'info', summary: 'User created', detail: 'Added in the table'});
+
+    this.mockService.index('users-from-db').subscribe(value => {
+      const lastId = value.reverse()[0] ? value.reverse()[0].id : 1000;
+      cadastro.id = lastId + 1;
+
+      this.mockService.createUser('users-from-db', cadastro as User).subscribe(callback => {
+          this.newUser.emit(callback);
+          this.user = new User();
+          form.reset();
+          this.router.navigateByUrl('/users');
+          this.messageService.add({severity: 'info', summary: 'User created', detail: 'Added in the table'});
+        }
+      );
+    });
   }
 
   resetForm(form: NgForm) {

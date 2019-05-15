@@ -42,4 +42,30 @@ export class MockService {
       map(value => value)
     );
   }
+
+  /**
+   * Generic create API call
+   *
+   * @method create
+   * @summary Call the backend API using the create method
+   *
+   * @param callType Name of the route to call in the API
+   * @param query Query to handle on backend. Example: ?matricula=312088
+   */
+  createUser(callType: string, genericObj: any): Observable<any> {
+    return this.http.post<any>(`${this.url}${callType}`, genericObj);
+  }
+
+  /**
+   * Generic create API call
+   *
+   * @method create
+   * @summary Call the backend API using the create method
+   *
+   * @param callType Name of the route to call in the API
+   * @param query Query to handle on backend. Example: ?matricula=312088
+   */
+  delete(callType: string, id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}${callType}/${id}`);
+  }
 }

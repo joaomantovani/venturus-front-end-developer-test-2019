@@ -24,9 +24,13 @@ export class FieldDaysComponent implements OnInit, AfterContentChecked {
   ngOnInit() {
     this.weekType = null;
     this.daysOfWeek = this.user.daysOfWeek;
+    this.formatDate();
   }
 
   private formatDate() {
+    if (!this.daysOfWeek.days) {
+      return;
+    }
 
     if (this.everyday.every(labelDay => this.daysOfWeek.days.includes(labelDay))) {
       this.weekType = 'everyday';
@@ -40,7 +44,7 @@ export class FieldDaysComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
-    if (this.daysOfWeek !== this.user.daysOfWeek) {
+    if (this.daysOfWeek !== this.user.daysOfWeek && this.daysOfWeek) {
       this.daysOfWeek = this.user.daysOfWeek;
       this.formatDate();
     }
