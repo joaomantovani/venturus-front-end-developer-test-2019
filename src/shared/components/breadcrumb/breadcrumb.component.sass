@@ -1,0 +1,24 @@
+@import "../../../variables"
+
+/deep/ body .ui-widget-header,
+.breadcrumb-background
+  background: $background-light-container
+  border: none
+
+/deep/ body .ui-breadcrumb ul li .ui-menuitem-link
+  color: $text-link
+
+/deep/ body .ui-breadcrumb ul li .ui-menuitem-link:hover
+  color: $text-link-hover
+  text-decoration: underline
+
+/deep/ .ui-breadcrumb ul
+  display: flex
+
+/deep/  body .ui-breadcrumb ul li:last-child .ui-menuitem-link,
+/deep/ body .ui-state-active, body .ui-state-highlight
+  background-color: transparent
+  color: $primary-text-color
+
+/deep/ body .ui-breadcrumb
+  padding: 0.375em 0.75em 0.375em 0

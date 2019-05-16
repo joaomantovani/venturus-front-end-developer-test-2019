@@ -10,11 +10,12 @@ import {BreadcrumbService} from './breadcrumb.service';
 })
 export class BreadcrumbComponent implements OnInit {
   crumbs$: Observable<MenuItem[]>;
+  home: MenuItem;
 
   constructor(private breadcrumb: BreadcrumbService) { }
 
   ngOnInit() {
-    console.log(this.breadcrumb.crumbs$);
     this.crumbs$ = this.breadcrumb.crumbs$;
+    this.home = {icon: 'pi pi-home'};
   }
 }

@@ -21,14 +21,14 @@
       <tr (mouseleave)="hover=false" (mouseover)="hover=true">
         <td>{{user?.username}}</td>
         <td>{{user?.name}}</td>
-        <td>{{user?.email}}</td>
-        <td>{{user?.address.city}}</td>
+        <td><a href="mailto:{{user?.email}}">{{user?.email}}</a></td>
+        <td><a href="#">{{user?.address.city}}</a></td>
         <td>{{user?.rideInGroup?.title}}</td>
         <td>
           <app-field-days [user]="user"></app-field-days>
         </td>
-        <td>{{user?.posts?.length ? user?.posts?.length -1 : 0}}</td>
-        <td>{{user?.albums?.length ? user?.albums?.length -1 : 0}}</td>
+        <td><a href="#">{{user?.posts?.length ? user?.posts?.length -1 : 0}}</a></td>
+        <td><a href="#">{{user?.albums?.length ? user?.albums?.length -1 : 0}}</a></td>
         <td>{{calcPhoto(user)}}</td>
         <td>
           <button (click)="delete(user)" *ngIf="hover" class="btn btn-link" type="button">

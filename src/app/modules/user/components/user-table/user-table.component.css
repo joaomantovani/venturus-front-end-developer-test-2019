@@ -1,3 +1,29 @@
+/deep/ .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #F9F9F9;
+  border: none; }
 
+/deep/ .table-striped tbody tr:hover {
+  background-color: #E3E3E3;
+  border: none; }
+
+/deep/ .table th, /deep/ .table td {
+  padding: 1.5rem;
+  border-top: none;
+  vertical-align: inherit; }
+
+/deep/ td {
+  height: 4em; }
+
+/deep/ th {
+  height: 4em;
+  font-weight: 500;
+  color: #525b5a; }
+
+/deep/ .table thead th {
+  vertical-align: inherit;
+  border-bottom: 1px solid #333333; }
+
+fa-icon {
+  color: #19a786; }
 
 /*# sourceMappingURL=user-table.component.css.map */

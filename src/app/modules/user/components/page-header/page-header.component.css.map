@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,EAAE;EACA,WAAW,EAAE,GAAG;;AAElB,YAAY;EACV,OAAO,EAAE,WAAW;;AAEtB,EAAE;EACA,MAAM,EAAE,iBAAqC",
+"sources": ["page-header.component.sass"],
+"names": [],
+"file": "page-header.component.css"
+}

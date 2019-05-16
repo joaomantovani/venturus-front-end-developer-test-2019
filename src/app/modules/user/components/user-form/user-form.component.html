@@ -4,20 +4,26 @@
 
       <div class="form-group">
         <label for="username">Username</label>
-        <input [(ngModel)]="user.username" class="form-control" id="username" name="username" pInputText type="text">
-        <small class="form-text text-muted" id="usernameHelp">Message</small>
+        <input
+          (focus)="onFocus('username')"
+          [(ngModel)]="user.username" class="form-control" id="username" name="username" pInputText type="text">
+        <small *ngIf="fieldsFocus.username" class="form-text text-muted" id="usernameHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
       <div class="form-group">
         <label for="name">Name</label>
-        <input [(ngModel)]="user.name" class="form-control" id="name" name="name" pInputText type="text">
-        <small class="form-text text-muted" id="nameHelp">Message</small>
+        <input
+          (focus)="onFocus('name')"
+          [(ngModel)]="user.name" class="form-control" id="name" name="name" pInputText type="text">
+        <small *ngIf="fieldsFocus.name" class="form-text text-muted" id="nameHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input [(ngModel)]="user.email" class="form-control" id="email" name="email" pInputText type="text">
-        <small class="form-text text-muted" id="emailHelp">Message</small>
+        <input
+          (focus)="onFocus('email')"
+          [(ngModel)]="user.email" class="form-control" id="email" name="email" pInputText type="text">
+        <small *ngIf="fieldsFocus.email" class="form-text text-muted" id="emailHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
     </div>
@@ -25,38 +31,61 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="email">City</label>
-        <input [(ngModel)]="user.address.city" class="form-control" id="city" name="city" pInputText type="text">
-        <small class="form-text text-muted" id="cityHelp">Message</small>
+        <input
+          (focus)="onFocus('city')"
+          [(ngModel)]="user.address.city" class="form-control" id="city" name="city" pInputText type="text">
+        <small *ngIf="fieldsFocus.city" class="form-text text-muted" id="cityHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
       <div class="form-group">
         <label for="city">Ride in group?</label>
         <br>
-        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="ny" label="Always" name="rideGroup"
+        <div class="form-check-inline">
+          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="ny" label="Always" name="rideGroup"
                        value="Always"></p-radioButton>
-        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="sf" label="Sometimes" name="rideGroup"
+        </div>
+        <div class="form-check-inline">
+          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="sf" label="Sometimes" name="rideGroup"
                        value="Sometimes"></p-radioButton>
-        <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="la" label="Never" name="rideGroup"
+        </div>
+        <div class="form-check-inline">
+          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="la" label="Never" name="rideGroup"
                        value="Never"></p-radioButton>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="city">Days of the week</label>
         <br>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sun" label="Sun" name="daysOfWeek"
+        <div class="form-check-inline">
+          <p-checkbox
+            [(ngModel)]="user.daysOfWeek.days" inputId="sun" label="Sun" name="daysOfWeek"
                     value="Sun"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
                     value="Mon"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
                     value="Tue"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
                     value="Wed"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
                     value="Thu"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
                     value="Fri"></p-checkbox>
-        <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
+        </div>
+        <div class="form-check-inline">
+          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
                     value="Sat"></p-checkbox>
+        </div>
       </div>
     </div>
   </div>
@@ -64,7 +93,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <button (click)="checkForm(form)" class="btn btn-info">Save</button>
-    <button (click)="resetForm(form)" class="btn btn-default">Discard</button>
+    <button type="button" (click)="checkForm(form)" class="btn btn-info mr-2">Save</button>
+    <button type="button" (click)="resetForm(form)" class="btn btn-default">Discard</button>
   </div>
 </div>
