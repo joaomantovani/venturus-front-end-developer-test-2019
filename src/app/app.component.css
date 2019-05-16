@@ -1,5 +1,13 @@
 /deep/ .ui-toast-message-success {
-  background-color: #3AC5A9;
+  background-color: #28a745;
+  color: white; }
+
+/deep/ .ui-toast-message-error {
+  background-color: #dc3545;
+  color: white; }
+
+/deep/ .ui-toast-message-info {
+  background-color: #17a2b8;
   color: white; }
 
 /*# sourceMappingURL=app.component.css.map */

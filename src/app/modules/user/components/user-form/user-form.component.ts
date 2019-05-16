@@ -42,26 +42,32 @@ export class UserFormComponent implements OnInit {
   }
 
   checkForm(form: NgForm) {
+    if (form.invalid) {
+      this.messageService.add({severity: 'error', summary: 'Form invalid', detail: 'Please, fill all the fields'});
+      return;
+    }
+
     const cadastro = {...form.value, ...this.user};
 
     this.mockService.index('users-from-db').subscribe(value => {
-      const lastId = value.reverse()[0] ? value.reverse()[0].id : 1000;
-      cadastro.id = lastId + 1;
+      cadastro.id = Math.floor(Math.random() * Math.floor(100000));
 
       this.mockService.createUser('users-from-db', cadastro as User).subscribe(callback => {
           this.newUser.emit(callback);
           this.user = new User();
           form.reset();
           this.router.navigateByUrl('/users');
-          this.messageService.add({severity: 'info', summary: 'User created', detail: 'Added in the table'});
+          this.messageService.add({severity: 'success', summary: 'User created', detail: 'Added in the table'});
         }
       );
     });
   }
 
   resetForm(form: NgForm) {
-    form.reset();
-    this.messageService.add({severity: 'info', summary: 'Form reseted'});
+    if (form.touched || form.dirty) {
+      form.reset();
+      this.messageService.add({severity: 'info', summary: 'Form reseted'});
+    }
   }
 
   onFocus(name: string) {
