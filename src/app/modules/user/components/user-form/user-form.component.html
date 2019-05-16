@@ -1,5 +1,4 @@
 <form #form=ngForm>
-  {{form.valid}}
   <div class="row">
     <div class="col-md-6">
 
@@ -75,34 +74,16 @@
       <div class="form-group">
         <label for="city">Days of the week</label>
         <br>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true"
-            [(ngModel)]="user.daysOfWeek.days" inputId="sun" label="Sun" name="daysOfWeek"
-                    value="Sun"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
-                    value="Mon"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
-                    value="Tue"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
-                    value="Wed"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
-                    value="Thu"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
-                    value="Fri"></p-checkbox>
-        </div>
-        <div class="form-check-inline">
-          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
-                    value="Sat"></p-checkbox>
+        <div class="form-check-inline" *ngFor="let weekDay of weekDays">
+          <p-checkbox
+            [(ngModel)]="user.daysOfWeek.days"
+            (ngModelChange)="setChecked(user, $event)"
+            [required]="true"
+            inputId="{{weekDay.inputId}}"
+            label="{{weekDay.label}}"
+            name="{{weekDay.name}}"
+            value="{{weekDay.value}}">
+          </p-checkbox>
         </div>
       </div>
     </div>

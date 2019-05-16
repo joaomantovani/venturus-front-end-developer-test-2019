@@ -1,20 +1,27 @@
+<div class="row">
+  <div class="col-md-8">
+    <app-page-header [name]="'Users'"></app-page-header>
+  </div>
+  <div class="col-md-4">
+    <ng-container [ngTemplateOutlet]="eu"></ng-container>
+  </div>
+</div>
+
 <div class="table-responsive">
 
-  <p-table [tableStyleClass]="'table table-striped table-hover w-auto'"
-           [value]="users"
-  >
-    <ng-template pTemplate="header">
+  <p-table #dt [columns]="cols"
+    [tableStyleClass]="'table table-striped table-hover w-auto'"
+           [value]="users">
+
+    <ng-template pTemplate="caption" #eu>
+      <div class="form-group search-input-table">
+        <input class="form-control" type="text" pInputText size="50" placeholder="Filter table content" (input)="dt.filterGlobal($event.target.value, 'contains')">
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" let-columns>
       <tr>
-        <th scope="col">Username</th>
-        <th scope="col">Name</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">City</th>
-        <th scope="col">Ride in group</th>
-        <th scope="col">Day of the week</th>
-        <th scope="col">Posts</th>
-        <th scope="col">Albums</th>
-        <th scope="col">Photos</th>
-        <th scope="col">Action</th>
+        <th *ngFor="let col of columns">{{col.header}}</th>
       </tr>
     </ng-template>
     <ng-template let-hover="false" let-user pTemplate="body">
@@ -40,5 +47,3 @@
 
   </p-table>
 </div>
-
-
