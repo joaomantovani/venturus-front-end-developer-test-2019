@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {CheckboxModule, RadioButtonModule} from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     UserFormComponent,
     UserTablePageComponent,
     UserTableComponent,
-    FieldDaysComponent
+    FieldDaysComponent,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,
