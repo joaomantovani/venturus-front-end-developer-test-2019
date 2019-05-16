@@ -12,4 +12,10 @@ body {
 .btn-success:hover, .btn-info:hover {
   background-color: #19a786; }
 
+a {
+  color: #3AC5A9; }
+
+a:hover {
+  color: #1ABC9C; }
+
 /*# sourceMappingURL=styles.css.map */

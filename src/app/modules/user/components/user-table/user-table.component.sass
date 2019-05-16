@@ -1,0 +1,29 @@
+@import "../../../../../variables"
+
+/deep/ .table-striped tbody tr:nth-of-type(odd)
+  background-color: $background-light-container
+  border: none
+
+/deep/ .table-striped tbody tr:hover
+  background-color: $background-dark-container
+  border: none
+
+/deep/ .table th, /deep/ .table td
+  padding: 1.5rem
+  border-top: none
+  vertical-align: inherit
+
+/deep/ td
+  height: 4em
+
+/deep/ th
+  height: 4em
+  font-weight: 500
+  color: $secondary-text-color
+
+/deep/ .table thead th
+    vertical-align: inherit
+    border-bottom: 1px solid $primary-text-color
+
+fa-icon
+  color: $secondary-darker-color

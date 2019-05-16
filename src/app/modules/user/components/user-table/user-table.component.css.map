@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,+CAA+C;EAC7C,gBAAgB,ECSW,OAAO;EDRlC,MAAM,EAAE,IAAI;;AAEd,oCAAoC;EAClC,gBAAgB,ECMU,OAAO;EDLjC,MAAM,EAAE,IAAI;;AAEd,kCAAkC;EAChC,OAAO,EAAE,MAAM;EACf,UAAU,EAAE,IAAI;EAChB,cAAc,EAAE,OAAO;;AAEzB,SAAS;EACP,MAAM,EAAE,GAAG;;AAEb,SAAS;EACP,MAAM,EAAE,GAAG;EACX,WAAW,EAAE,GAAG;EAChB,KAAK,EChBgB,OAAO;;ADkB9B,sBAAsB;EAClB,cAAc,EAAE,OAAO;EACvB,aAAa,EAAE,iBAA6B;;AAEhD,OAAO;EACL,KAAK,EC1BkB,OAAO",
+"sources": ["user-table.component.sass","../../../../../variables.sass"],
 "names": [],
 "file": "user-table.component.css"
 }
