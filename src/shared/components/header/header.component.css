@@ -18,4 +18,12 @@
   color: #1ABC9C;
   background-color: #F9F9F9; }
 
+.circle {
+  padding: 0.5em 0.7em;
+  border-radius: 50%;
+  font-size: 1em;
+  color: grey;
+  border: 1px solid grey;
+  margin-right: 0.35em; }
+
 /*# sourceMappingURL=header.component.css.map */

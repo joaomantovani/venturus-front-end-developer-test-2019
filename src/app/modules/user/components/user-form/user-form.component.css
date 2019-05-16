@@ -37,4 +37,16 @@ label {
 /deep/ body .ui-chkbox .ui-chkbox-box {
   border-radius: 0.2em; }
 
+.input-error {
+  border: 2px solid #dc3545;
+  background-color: rgba(255, 198, 203, 0.26); }
+
+.input-success {
+  border: 2px solid #28a745;
+  background-color: rgba(198, 255, 211, 0.26); }
+
+.btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed; }
+
 /*# sourceMappingURL=user-form.component.css.map */
