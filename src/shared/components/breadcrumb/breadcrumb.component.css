@@ -1,4 +1,5 @@
-/deep/ body .ui-widget-header {
+/deep/ body .ui-widget-header,
+.breadcrumb-background {
   background: #F9F9F9;
   border: none; }
 
@@ -16,5 +17,8 @@
 /deep/ body .ui-state-active, body .ui-state-highlight {
   background-color: transparent;
   color: #333333; }
+
+/deep/ body .ui-breadcrumb {
+  padding: 0.375em 0.75em 0.375em 0; }
 
 /*# sourceMappingURL=breadcrumb.component.css.map */

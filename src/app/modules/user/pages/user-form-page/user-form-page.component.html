@@ -1,5 +1,5 @@
-<div class="container-fluid registration-banner">
-  <div class="row">
+<div class="container registration-banner">
+  <div class="row" >
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" *ngFor="let icon of icons">
       <div class="iconbox">
         <h5>{{icon.title}}</h5>
@@ -14,4 +14,9 @@
   </div>
 </div>
 
-<app-user-form (newUser)="receiverNewUser($event)"></app-user-form>
+<div class="container">
+  <div class="offset-md-1 col-md-10 offset-sm-0 col-sm-12">
+    <hr>
+    <app-user-form (newUser)="receiverNewUser($event)"></app-user-form>
+  </div>
+</div>

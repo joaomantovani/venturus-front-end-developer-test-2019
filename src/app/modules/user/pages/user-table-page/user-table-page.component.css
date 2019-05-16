@@ -1,6 +1,7 @@
 .full-background {
   background-color: #BAEBE1;
-  padding: 1.2em; }
+  padding: 1.2em;
+  width: 100%; }
 
 h5 {
   font-weight: 900;
@@ -10,7 +11,7 @@ fa-icon {
   color: #1ABC9C; }
 
 .iconbox {
-  padding: 1em;
+  padding: 1em 1em 1em 0;
   display: inline-flex; }
 
 .iconbox p {
