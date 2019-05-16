@@ -11,14 +11,5 @@
 
   <app-breadcrumb></app-breadcrumb>
 
-  <div class="">
-<!--    <app-user-table [newUser]="newUser"></app-user-table>-->
-<!--    <br><br>-->
-<!--    {{newUser | json}}-->
-<!--    <app-user-form (newUser)="receiverNewUser($event)"></app-user-form>-->
-    <router-outlet></router-outlet>
-    <a [routerLink]="'/users'">/users</a>
-    <br>
-    <a [routerLink]="'/users/new'">/users/new</a>
-  </div>
+  <router-outlet></router-outlet>
 </div>
