@@ -1,3 +1,40 @@
+label {
+  margin-bottom: 0.1em;
+  font-weight: 500; }
 
+.form-control:focus {
+  color: #525b5a;
+  background-color: #fff;
+  border: 2px solid #3AC5A9;
+  box-shadow: none; }
+
+/deep/ body .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
+  font-size: 1.04em;
+  top: 0.5em;
+  color: black; }
+
+/deep/ body .ui-radiobutton .ui-radiobutton-box,
+/deep/ .ui-chkbox {
+  font-size: 1.35em !important; }
+
+/deep/ body .ui-radiobutton .ui-radiobutton-box:not(.ui-state-disabled):not(.ui-state-active):hover,
+/deep/ body .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  border: 1px solid #3AC5A9; }
+
+/deep/ body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+  border: 1px solid #3AC5A9;
+  background-color: white;
+  color: #ffffff; }
+
+/deep/ .ui-chkbox-label {
+  vertical-align: top; }
+
+/deep/ body .ui-chkbox .ui-chkbox-box.ui-state-active {
+  border: 1px solid #3AC5A9;
+  background-color: white;
+  color: black; }
+
+/deep/ body .ui-chkbox .ui-chkbox-box {
+  border-radius: 0.2em; }
 
 /*# sourceMappingURL=user-form.component.css.map */

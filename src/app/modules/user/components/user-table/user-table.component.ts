@@ -84,10 +84,11 @@ export class UserTableComponent implements OnInit, OnChanges {
       icon: 'pi pi-info-circle',
       accept: () => {
         // Remove user from users array
-        this.mockService.delete('users-from-db', user.id).subscribe(value => {
-          this.users.splice(this.users.indexOf(user), 1);
-          this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
+        this.mockService.delete('users', user.id).subscribe(value => {
         });
+
+        this.users.splice(this.users.indexOf(user), 1);
+        this.messageService.add({severity: 'success', summary: 'Successfully deleted', detail: 'The user was removed from table'});
       },
     });
   }

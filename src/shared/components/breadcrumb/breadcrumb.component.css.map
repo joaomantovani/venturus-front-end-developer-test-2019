@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA;sBAA8B;EAE5B,UAAU,ECQiB,OAAO;EDPlC,MAAM,EAAE,IAAI;;AAEd,kDAAkD;EAChD,KAAK,ECFK,OAAc;;ADI1B,wDAAwD;EACtD,KAAK,ECJW,OAAgB;EDKhC,eAAe,EAAE,SAAS;;AAE5B,wBAAwB;EACtB,OAAO,EAAE,IAAI;;AAEf;sDAA+D;EAE7D,gBAAgB,EAAE,WAAW;EAC7B,KAAK,EChBc,OAAO;;ADkB5B,0BAA0B;EACxB,OAAO,EAAE,wBAAwB",
+"sources": ["breadcrumb.component.sass","../../../variables.sass"],
 "names": [],
 "file": "breadcrumb.component.css"
 }

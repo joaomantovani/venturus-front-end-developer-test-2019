@@ -20,6 +20,8 @@ export class UserFormComponent implements OnInit {
   user: User;
   @Output() newUser = new EventEmitter();
 
+  fieldsFocus: any;
+
   constructor(private router: Router,
               private messageService: MessageService,
               private mockService: MockService) { }
@@ -30,6 +32,13 @@ export class UserFormComponent implements OnInit {
     this.user.albums = [new Albums()];
     this.user.daysOfWeek = new DaysOfWeek();
     this.user.rideInGroup = new RideGroup();
+
+    this.fieldsFocus = {
+      username: false,
+      email: false,
+      name: false,
+      city: false,
+    };
   }
 
   checkForm(form: NgForm) {
@@ -53,5 +62,13 @@ export class UserFormComponent implements OnInit {
   resetForm(form: NgForm) {
     form.reset();
     this.messageService.add({severity: 'info', summary: 'Form reseted'});
+  }
+
+  onFocus(name: string) {
+    this.fieldsFocus.city = false;
+    this.fieldsFocus.email = false;
+    this.fieldsFocus.name = false;
+    this.fieldsFocus.username = false;
+    this.fieldsFocus[name] = true;
   }
 }

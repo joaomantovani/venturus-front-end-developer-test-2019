@@ -2,5 +2,23 @@
 @import url(~primeicons/primeicons.css);
 @import url(~primeng/resources/primeng.min.css);
 @import url(~primeng/resources/themes/bootstrap/theme.css);
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333333; }
+
+.btn-success, .btn-info {
+  background-color: #1ABC9C; }
+
+.btn-success:hover, .btn-info:hover {
+  background-color: #19a786; }
+
+.btn.btn-default {
+  background-color: #E3E3E3; }
+
+a {
+  color: #3AC5A9; }
+
+a:hover {
+  color: #1ABC9C; }
 
 /*# sourceMappingURL=styles.css.map */
