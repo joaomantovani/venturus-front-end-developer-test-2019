@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to run de project
 
+Download the project or clone it 
+
 Run `npm i` to create the node_modules folder
 
 Run `json-server db.json --watch` to create the fake database/API
