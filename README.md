@@ -14,6 +14,8 @@ Run `ng serve` for a dev server.
 
 Navigate to `http://localhost:4200/`
 
+## Preview
+![Preview gif](https://media.giphy.com/media/RIMd0dWUI8IgqLzN34/giphy.gif)
 
 ## About the project
 
