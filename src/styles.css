@@ -12,6 +12,9 @@ body {
 .btn-success:hover, .btn-info:hover {
   background-color: #19a786; }
 
+.btn.btn-default {
+  background-color: #E3E3E3; }
+
 a {
   color: #3AC5A9; }
 
