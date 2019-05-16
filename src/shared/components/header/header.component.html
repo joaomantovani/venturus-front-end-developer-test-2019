@@ -13,7 +13,8 @@
       <ul class="navbar-nav">
         <li [class.show]="showDropdown" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle">
-            <img class="rounded-circle usr-img" src="https://www.placehold.it/50x50">
+<!--            <img class="rounded-circle usr-img" src="https://www.placehold.it/50x50">-->
+            <span class="circle">{{initials}}</span>
             {{loggedUser?.name}}
           </a>
           <div [class.show]="showDropdown" aria-labelledby="dropdown03" class="dropdown-menu">

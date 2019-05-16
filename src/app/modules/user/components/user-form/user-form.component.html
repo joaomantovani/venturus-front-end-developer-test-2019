@@ -1,28 +1,42 @@
 <form #form=ngForm>
+  {{form.valid}}
   <div class="row">
     <div class="col-md-6">
 
       <div class="form-group">
         <label for="username">Username</label>
-        <input
+        <input #username="ngModel"
           (focus)="onFocus('username')"
-          [(ngModel)]="user.username" class="form-control" id="username" name="username" pInputText type="text">
+          [(ngModel)]="user.username"
+          [class.input-error]="!username.valid  && (username.dirty || username.touched)"
+          [class.input-success]="username.valid && (username.dirty || username.touched)"
+          [required]="true"
+          class="form-control" id="username" name="username" pInputText type="text">
         <small *ngIf="fieldsFocus.username" class="form-text text-muted" id="usernameHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
       <div class="form-group">
         <label for="name">Name</label>
-        <input
+        <input #name="ngModel"
           (focus)="onFocus('name')"
-          [(ngModel)]="user.name" class="form-control" id="name" name="name" pInputText type="text">
+          [(ngModel)]="user.name"
+          [class.input-error]="!name.valid  && (name.dirty || name.touched)"
+          [class.input-success]="name.valid && (name.dirty || name.touched)"
+          [required]="true"
+          [required]="true"
+          class="form-control" id="name" name="name" pInputText type="text">
         <small *ngIf="fieldsFocus.name" class="form-text text-muted" id="nameHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input
+        <input #email="ngModel"
           (focus)="onFocus('email')"
-          [(ngModel)]="user.email" class="form-control" id="email" name="email" pInputText type="text">
+          [(ngModel)]="user.email"
+          [class.input-error]="!email.valid  && (email.dirty || email.touched)"
+          [class.input-success]="email.valid && (email.dirty || email.touched)"
+          [required]="true"
+          class="form-control" id="email" name="email" pInputText type="text">
         <small *ngIf="fieldsFocus.email" class="form-text text-muted" id="emailHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
@@ -30,10 +44,14 @@
 
     <div class="col-md-6">
       <div class="form-group">
-        <label for="email">City</label>
-        <input
+        <label for="city">City</label>
+        <input #city="ngModel"
           (focus)="onFocus('city')"
-          [(ngModel)]="user.address.city" class="form-control" id="city" name="city" pInputText type="text">
+          [(ngModel)]="user.address.city"
+          [class.input-error]="!city.valid  && (city.dirty || city.touched)"
+          [class.input-success]="city.valid && (city.dirty || city.touched)"
+          [required]="false"
+          class="form-control" id="city" name="city" pInputText type="text">
         <small *ngIf="fieldsFocus.city" class="form-text text-muted" id="cityHelp">Lorem ipsum dolor sit amet, consectetur.</small>
       </div>
 
@@ -41,15 +59,15 @@
         <label for="city">Ride in group?</label>
         <br>
         <div class="form-check-inline">
-          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="ny" label="Always" name="rideGroup"
+          <p-radioButton [required]="true" [(ngModel)]="user.rideInGroup.title" inputId="ny" label="Always" name="rideGroup"
                        value="Always"></p-radioButton>
         </div>
         <div class="form-check-inline">
-          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="sf" label="Sometimes" name="rideGroup"
+          <p-radioButton [required]="true" [(ngModel)]="user.rideInGroup.title" inputId="sf" label="Sometimes" name="rideGroup"
                        value="Sometimes"></p-radioButton>
         </div>
         <div class="form-check-inline">
-          <p-radioButton [(ngModel)]="user.rideInGroup.title" inputId="la" label="Never" name="rideGroup"
+          <p-radioButton [required]="true" [(ngModel)]="user.rideInGroup.title" inputId="la" label="Never" name="rideGroup"
                        value="Never"></p-radioButton>
         </div>
       </div>
@@ -58,32 +76,32 @@
         <label for="city">Days of the week</label>
         <br>
         <div class="form-check-inline">
-          <p-checkbox
+          <p-checkbox [required]="true"
             [(ngModel)]="user.daysOfWeek.days" inputId="sun" label="Sun" name="daysOfWeek"
                     value="Sun"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="mon" label="Mon" name="daysOfWeek"
                     value="Mon"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="tue" label="Tue" name="daysOfWeek"
                     value="Tue"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="wed" label="Wed" name="daysOfWeek"
                     value="Wed"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="thu" label="Thu" name="daysOfWeek"
                     value="Thu"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="fri" label="Fri" name="daysOfWeek"
                     value="Fri"></p-checkbox>
         </div>
         <div class="form-check-inline">
-          <p-checkbox [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
+          <p-checkbox [required]="true" [(ngModel)]="user.daysOfWeek.days" inputId="sat" label="Sat" name="daysOfWeek"
                     value="Sat"></p-checkbox>
         </div>
       </div>
@@ -93,7 +111,11 @@
 
 <div class="row">
   <div class="col-md-12">
-    <button type="button" (click)="checkForm(form)" class="btn btn-info mr-2">Save</button>
-    <button type="button" (click)="resetForm(form)" class="btn btn-default">Discard</button>
+    <button (click)="checkForm(form)"
+            [class.disabled]="!form.valid"
+            class="btn btn-success mr-2" type="button">Save</button>
+    <button (click)="resetForm(form)"
+            [class.disabled]="form.untouched || form.pristine"
+            class="btn btn-default" type="button">Discard</button>
   </div>
 </div>

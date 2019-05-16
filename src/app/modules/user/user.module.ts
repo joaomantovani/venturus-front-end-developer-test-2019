@@ -8,7 +8,7 @@ import {UserTablePageComponent} from './pages/user-table-page/user-table-page.co
 import {UserTableComponent} from './components/user-table/user-table.component';
 import {FieldDaysComponent} from './components/field-days/field-days.component';
 import {FormsModule} from '@angular/forms';
-import {CheckboxModule, RadioButtonModule} from 'primeng/primeng';
+import {CheckboxModule, InputTextModule, RadioButtonModule} from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
@@ -29,7 +29,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     RadioButtonModule,
     CheckboxModule,
     TableModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    InputTextModule
   ]
 })
 export class UserModule { }
