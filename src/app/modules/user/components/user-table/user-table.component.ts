@@ -18,6 +18,9 @@ export class UserTableComponent implements OnInit, OnChanges {
   users: User[] = [];
   faTrash = faTrash;
 
+  cars: any[];
+  cols: any[];
+
   @Input() newUser: User;
 
   constructor(private apiService: ApiService,
@@ -26,6 +29,19 @@ export class UserTableComponent implements OnInit, OnChanges {
               private messageService: MessageService) { }
 
   ngOnInit() {
+    this.cols = [
+      { field: 'username', header: 'Username' },
+      { field: 'name', header: 'Name' },
+      { field: 'e_mail', header: 'E-mail' },
+      { field: 'city', header: 'City' },
+      { field: 'ride-in-group', header: 'Ride in group' },
+      { field: 'day-of-the-week', header: 'Day of the week' },
+      { field: 'posts', header: 'Posts' },
+      { field: 'albums', header: 'Albums' },
+      { field: 'photos', header: 'Photos' },
+      { field: 'action', header: 'Action' },
+    ];
+
     this.users = [];
 
     this.apiService.index('users').subscribe(users => {

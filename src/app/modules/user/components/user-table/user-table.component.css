@@ -26,4 +26,10 @@
 fa-icon {
   color: #19a786; }
 
+.search-input-table {
+  padding: 2em 0 1em 0; }
+
+/deep/ body .ui-widget-header, .breadcrumb-background {
+  display: none; }
+
 /*# sourceMappingURL=user-table.component.css.map */

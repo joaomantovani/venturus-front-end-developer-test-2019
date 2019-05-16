@@ -20,6 +20,8 @@ export class UserFormComponent implements OnInit {
   user: User;
   @Output() newUser = new EventEmitter();
 
+  weekDays = [];
+
   fieldsFocus: any;
 
   constructor(private router: Router,
@@ -39,6 +41,16 @@ export class UserFormComponent implements OnInit {
       name: false,
       city: false,
     };
+
+    this.weekDays = [
+      {inputId: 'sun', label: 'Sun', name: 'daysOfWeek', value: 'Sun'},
+      {inputId: 'mon', label: 'Mon', name: 'daysOfWeek', value: 'Mon'},
+      {inputId: 'tue', label: 'Tue', name: 'daysOfWeek', value: 'Tue'},
+      {inputId: 'wed', label: 'Wed', name: 'daysOfWeek', value: 'Wed'},
+      {inputId: 'thu', label: 'Thu', name: 'daysOfWeek', value: 'Thu'},
+      {inputId: 'fri', label: 'Fri', name: 'daysOfWeek', value: 'Fri'},
+      {inputId: 'sat', label: 'Sat', name: 'daysOfWeek', value: 'Sat'},
+    ];
   }
 
   checkForm(form: NgForm) {
@@ -76,5 +88,9 @@ export class UserFormComponent implements OnInit {
     this.fieldsFocus.name = false;
     this.fieldsFocus.username = false;
     this.fieldsFocus[name] = true;
+  }
+
+  setChecked(user: User, $event: any) {
+    this.user.daysOfWeek.days = user.daysOfWeek.days;
   }
 }
