@@ -145,41 +145,7 @@
       "title": "Always"
     }
   ],
-  "users-from-db": [
-    {
-      "username": "11973549109",
-      "name": "JOAO P MANTOVANI",
-      "email": "jpm.mantovani45@gmail.com",
-      "city": "Itatiba",
-      "rideGroup": "Always",
-      "daysOfWeek": {
-        "userId": null,
-        "id": null,
-        "days": [
-          "Sun"
-        ]
-      },
-      "id": 26335,
-      "address": {
-        "geo": {},
-        "city": "Itatiba"
-      },
-      "phone": "",
-      "website": "",
-      "company": {},
-      "posts": [
-        {}
-      ],
-      "albums": [
-        {}
-      ],
-      "rideInGroup": {
-        "userId": null,
-        "id": null,
-        "title": "Always"
-      }
-    }
-  ],
+  "users-from-db": [],
   "logged-user": [
     {
       "id": "dQw4w9WgXcQ",
