@@ -44,7 +44,7 @@ The project was organized using git Issues/Milestones and releases and after eac
 * [Release 6](https://github.com/joaomantovani/venturus-front-end-developer-test-2019/releases/tag/6_all_the_rest)
 
 #### Last release
-* [Last release](https://github.com/joaomantovani/venturus-front-end-developer-test-2019/releases/tag/test_finish)
+* [Last release](https://github.com/joaomantovani/venturus-front-end-developer-test-2019/releases/tag/db.json)
 
 #### All releases
 * [All releases](https://github.com/joaomantovani/venturus-front-end-developer-test-2019/releases)
